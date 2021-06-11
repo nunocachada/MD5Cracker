@@ -6,24 +6,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MD5 CRACKER</title>
     <style>
+      @import url('https://fonts.googleapis.com/css?family=Catamaran');
+
       html {
-        margin: 0;
-        padding: 0;
+        box-sizing: border-box;
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
       }
 
       body {
+        height: 100vh;
+        color: rgba(255, 255, 255, 0.9);
+        font: 16px/1 'Catamaran', sans-serif;
+        background: #ff9c4b;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
         align-items: center;
-        background-color: black;
-        color: white;
+        justify-content: center;
+      }
+
+      h2 {
+        width: 50%;
+        text-align: center;
+        height: 44px;
+        line-height: 24px;
+        font-weight: 400;
+      }
+      @media screen and (max-width: 768px) {
+        h2 {
+          width: 100%;
+        }
+      }
+
+      a,
+      a > span {
+        position: relative;
+        color: inherit;
+        text-decoration: none;
+        line-height: 24px;
+      }
+      a:before,
+      a:after,
+      a > span:before,
+      a > span:after {
+        content: '';
+        position: absolute;
+        transition: transform 0.5s ease;
+      }
+
+      .md5-cracker-effect {
+        display: inline-block;
+        overflow: hidden;
+      }
+      .md5-cracker-effect:before {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #b25305;
+        transform: translateX(-100%);
+      }
+      .md5-cracker-effect:after {
+        content: attr(data-content);
+        left: 0;
+        top: 0;
+        width: 0;
+        margin: 12px;
+        color: #b25305;
+        white-space: nowrap;
+        overflow: hidden;
+        transition: width 0.5s ease;
+      }
+      .md5-cracker-effect > span {
+        display: block;
+        margin: 2px;
+        padding: 10px;
+        background: #ff9c4b;
+      }
+      .md5-cracker-effect:hover:before {
+        transform: translateX(0);
+      }
+      .md5-cracker-effect:hover:after {
+        width: calc(100% - 24px);
       }
     </style>
   </head>
   <body>
-    <a href="https://md5-cracker.herokuapp.com"
-      ><h1>Check out MD5CRACKER APP</h1></a
-    >
+    <h2>
+      <a
+        class="md5-cracker-effect"
+        href="https://md5-cracker.herokuapp.com"
+        data-content="MD5 CRACKER APP"
+        ><span>MD5 CRACKER APP</span></a
+      >
+    </h2>
   </body>
 </html>
